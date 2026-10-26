@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indraraj Singh Thakur | System_User_v1.0 Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#090A0F',
+            panel: '#11131C',
+            neonCyan: '#00F0FF',
+            neonEmerald: '#10B981',
+            neonGold: '#F59E0B',
+          },
+          fontFamily: {
+            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"Inter"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #090A0F;
+      color: #E2E8F0;
+      background-image: 
+        linear-gradient(to right, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .cyan-glow:hover {
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+      border-color: rgba(0, 240, 255, 0.6);
+    }
+    .gold-glow:hover {
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.2);
+      border-color: rgba(245, 158, 11, 0.6);
+    }
+  </style>
+</head>
+<body class="selection:bg-neonCyan selection:text-obsidian">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-obsidian/90 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="#home" class="font-mono text-xs sm:text-sm font-semibold text-neonCyan flex items-center gap-2">
+          <i data-lucide="terminal" class="w-4 h-4"></i>
+          System_User_v1.0 // <span class="text-white">INDRARAJ_SINGH_THAKUR</span>
+        </a>
+        <div class="hidden md:flex items-center gap-2 bg-emerald-950/50 border border-emerald-500/30 px-3 py-1 rounded-full">
+          <span class="w-2 h-2 rounded-full bg-neonEmerald animate-ping"></span>
+          <span class="w-2 h-2 rounded-full bg-neonEmerald -ml-4"></span>
+          <span class="font-mono text-[11px] text-neonEmerald">Status: Online</span>
+        </div>
+      </div>
+
+      <nav class="flex items-center gap-6">
+        <div class="hidden lg:flex items-center gap-6 font-mono text-xs text-slate-300">
+          <a href="#home" class="hover:text-neonCyan transition">Home</a>
+          <a href="#skills" class="hover:text-neonCyan transition">Skill Deck</a>
+          <a href="#quests" class="hover:text-neonCyan transition">Quest Log</a>
+          <a href="#projects" class="hover:text-neonCyan transition">Projects</a>
+          <a href="#contact" class="hover:text-neonCyan transition">Contact</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="https://github.com/Indrajthakur" target="_blank" class="p-2 rounded-lg bg-panel border border-slate-800 text-slate-300 hover:text-neonCyan hover:border-neonCyan transition">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/indraraj-thakurr-2a590a3b1" target="_blank" class="p-2 rounded-lg bg-panel border border-slate-800 text-slate-300 hover:text-neonCyan hover:border-neonCyan transition">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-20">
+
+    <!-- HERO HUD SECTION -->
+    <section id="home" class="relative">
+      <div class="absolute -top-10 -left-10 w-72 h-72 bg-neonCyan/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-20 right-0 w-72 h-72 bg-neonEmerald/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative bg-panel border border-slate-800 rounded-2xl p-8 sm:p-12 shadow-2xl space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-800 font-mono text-xs text-slate-400">
+          <span class="px-3 py-1 rounded bg-neonCyan/10 border border-neonCyan/30 text-neonCyan font-semibold">
+            LVL 01 // Developer & Engineering Student
+          </span>
+          <button onclick="gainXP()" class="px-3 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-neonGold hover:bg-amber-500/20 transition cursor-pointer flex items-center gap-1.5 font-mono">
+            ⚡ XP: <span id="xp-count">1250</span> (+Grind)
+          </button>
+        </div>
+
+        <div class="space-y-3">
+          <p class="font-mono text-xs uppercase tracking-widest text-neonEmerald flex items-center gap-2">
+            <i data-lucide="cpu" class="w-4 h-4"></i> PLAYER_ONE INITIALIZED
+          </p>
+          <h1 class="font-display text-4xl sm:text-6xl font-bold tracking-tight text-white">
+            Indraraj Singh <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonCyan via-emerald-400 to-neonGold">Thakur</span>
+          </h1>
+          <p class="text-slate-300 text-base sm:text-xl leading-relaxed max-w-2xl">
+            "Engineering student &amp; builder turning complex logic into fast, clean code. Always shipping."
+          </p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-obsidian border border-slate-800 p-4 rounded-xl">
+            <div class="font-mono text-[11px] text-slate-400">CURRENT CLASS</div>
+            <div class="font-mono text-sm font-bold text-white mt-1">B.Tech Engineering</div>
+          </div>
+          <div class="bg-obsidian border border-slate-800 p-4 rounded-xl">
+            <div class="font-mono text-[11px] text-slate-400">CORE WEAPON</div>
+            <div class="font-mono text-sm font-bold text-white mt-1">C++ &amp; Web Tech</div>
+          </div>
+          <div class="bg-obsidian border border-slate-800 p-4 rounded-xl">
+            <div class="font-mono text-[11px] text-slate-400">GITHUB HANDLE</div>
+            <div class="font-mono text-sm font-bold text-neonCyan mt-1">@Indrajthakur</div>
+          </div>
+          <div class="bg-obsidian border border-slate-800 p-4 rounded-xl">
+            <div class="font-mono text-[11px] text-slate-400">SYSTEM MODE</div>
+            <div class="font-mono text-sm font-bold text-neonEmerald mt-1">Always Shipping</div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#projects" class="px-6 py-3 rounded-xl font-mono text-xs font-bold bg-neonCyan text-obsidian hover:bg-cyan-300 transition shadow-lg shadow-neonCyan/20 flex items-center gap-2">
+            <i data-lucide="layers" class="w-4 h-4"></i> EXPLORE_PROJECTS
+          </a>
+          <a href="https://github.com/Indrajthakur" target="_blank" class="px-6 py-3 rounded-xl font-mono text-xs font-semibold bg-obsidian border border-slate-700 text-white hover:border-neonCyan hover:text-neonCyan transition flex items-center gap-2">
+            <i data-lucide="github" class="w-4 h-4"></i> GITHUB_PROFILE
+          </a>
+          <a href="https://www.linkedin.com/in/indraraj-thakurr-2a590a3b1" target="_blank" class="px-6 py-3 rounded-xl font-mono text-xs font-semibold bg-obsidian border border-slate-700 text-slate-300 hover:border-neonEmerald hover:text-neonEmerald transition flex items-center gap-2">
+            <i data-lucide="linkedin" class="w-4 h-4"></i> LINKEDIN_CONNECT
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILL DECK -->
+    <section id="skills" class="space-y-6">
+      <div class="border-b border-slate-800 pb-4">
+        <p class="font-mono text-xs text-neonCyan uppercase tracking-widest">// ARSENAL &amp; LOADOUT</p>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Skill Deck</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-panel border border-slate-800 rounded-xl p-6 gold-glow transition space-y-4">
+          <div class="flex justify-between font-mono text-xs"><span class="text-neonGold">★ EQUIPPED</span><span class="text-neonGold font-bold">PWR 85/100</span></div>
+          <h3 class="font-display text-lg font-bold text-white">C++ &amp; OOP</h3>
+          <p class="text-slate-400 text-sm">Classes, inheritance, constructors, and object-oriented logic.</p>
+        </div>
+        <div class="bg-panel border border-slate-800 rounded-xl p-6 gold-glow transition space-y-4">
+          <div class="flex justify-between font-mono text-xs"><span class="text-neonGold">★ EQUIPPED</span><span class="text-neonGold font-bold">PWR 85/100</span></div>
+          <h3 class="font-display text-lg font-bold text-white">HTML5 &amp; CSS3</h3>
+          <p class="text-slate-400 text-sm">Responsive layouts, modern UI styling, and dark-mode interfaces.</p>
+        </div>
+        <div class="bg-panel border border-slate-800 rounded-xl p-6 gold-glow transition space-y-4">
+          <div class="flex justify-between font-mono text-xs"><span class="text-neonGold">★ EQUIPPED</span><span class="text-neonGold font-bold">PWR 90/100</span></div>
+          <h3 class="font-display text-lg font-bold text-white">AI &amp; Prompt Engineering</h3>
+          <p class="text-slate-400 text-sm">Leveraging AI tools for rapid prototyping, debugging, and creative workflows.</p>
+        </div>
+        <div class="bg-panel border border-slate-800 rounded-xl p-6 cyan-glow transition space-y-4">
+          <div class="flex justify-between font-mono text-xs"><span class="text-neonCyan">◆ UNLOCKED</span><span class="text-neonCyan font-bold">PWR 82/100</span></div>
+          <h3 class="font-display text-lg font-bold text-white">Problem Solving &amp; Math</h3>
+          <p class="text-slate-400 text-sm">Engineering mathematics, digital systems, and algorithmic logic.</p>
+        </div>
+        <div class="bg-panel border border-slate-800 rounded-xl p-6 cyan-glow transition space-y-4">
+          <div class="flex justify-between font-mono text-xs"><span class="text-neonCyan">◆ UNLOCKED</span><span class="text-neonCyan font-bold">PWR 75/100</span></div>
+          <h3 class="font-display text-lg font-bold text-white">Git &amp; GitHub</h3>
+          <p class="text-slate-400 text-sm">Version control, code repositories (@Indrajthakur), and developer workflow.</p>
+        </div>
+        <div class="bg-panel border border-slate-800 rounded-xl p-6 border-emerald-500/40 transition space-y-4">
+          <div class="flex justify-between font-mono text-xs"><span class="text-neonEmerald">⟳ LOADING...</span><span class="text-neonEmerald font-bold">PWR 65/100</span></div>
+          <h3 class="font-display text-lg font-bold text-white">JavaScript &amp; React</h3>
+          <p class="text-slate-400 text-sm">Building interactive frontend components and modern web apps.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUEST LOG -->
+    <section id="quests" class="space-y-6">
+      <div class="border-b border-slate-800 pb-4">
+        <p class="font-mono text-xs text-neonEmerald uppercase tracking-widest">// QUEST_LOG // THE GRIND</p>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Experience &amp; Learning Timeline</h2>
+      </div>
+
+      <div class="relative pl-6 border-l-2 border-slate-800 space-y-8">
+        <div class="bg-panel border border-slate-800 rounded-xl p-6 cyan-glow space-y-3">
+          <div class="flex justify-between font-mono text-xs text-neonCyan"><span>QUEST 01 // ACTIVE</span><span>2026 – Present</span></div>
+          <h3 class="font-display text-xl font-bold text-white">The Full-Stack &amp; C++ Grind</h3>
+          <p class="text-slate-300 text-sm">▸ Mastering Object-Oriented Programming in C++, Data Structures, and core programming logic.<br>▸ Designing and shipping responsive web interfaces with modern frontend tools.</p>
+        </div>
+        <div class="bg-panel border border-slate-800 rounded-xl p-6 gold-glow space-y-3">
+          <div class="flex justify-between font-mono text-xs text-neonGold"><span>QUEST 02 // ACTIVE</span><span>B.Tech Degree</span></div>
+          <h3 class="font-display text-xl font-bold text-white">B.Tech Engineering Coursework</h3>
+          <p class="text-slate-300 text-sm">▸ Building a strong academic foundation in Digital Systems, Engineering Mathematics, and Computer Science fundamentals.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="space-y-6">
+      <div class="border-b border-slate-800 pb-4">
+        <p class="font-mono text-xs text-neonCyan uppercase tracking-widest">// SYSTEM_CORE_PROJECTS</p>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Featured Builds</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="bg-panel border border-slate-800 rounded-xl p-6 flex flex-col justify-between cyan-glow space-y-4">
+          <div>
+            <span class="font-mono text-[11px] text-neonEmerald">● DEPLOYED</span>
+            <h3 class="font-display text-xl font-bold text-white mt-2">Indraraj_OS // Portfolio HUD v1.0</h3>
+            <p class="text-slate-400 text-sm mt-2">Gamified RPG-style personal developer portfolio built with Tailwind CSS and responsive design.</p>
+          </div>
+          <a href="https://github.com/Indrajthakur" target="_blank" class="py-2.5 px-4 rounded-lg bg-obsidian border border-slate-700 hover:border-neonCyan text-xs font-mono font-semibold text-white hover:text-neonCyan transition flex items-center justify-center gap-2">
+            <i data-lucide="github" class="w-4 h-4"></i> VIEW_ON_GITHUB
+          </a>
+        </div>
+        <div class="bg-panel border border-slate-800 rounded-xl p-6 flex flex-col justify-between gold-glow space-y-4">
+          <div>
+            <span class="font-mono text-[11px] text-neonCyan">✓ COMPLETED</span>
+            <h3 class="font-display text-xl font-bold text-white mt-2">C++ OOP Logic Suite</h3>
+            <p class="text-slate-400 text-sm mt-2">Collection of object-oriented C++ applications demonstrating constructor hierarchies and clean modular code.</p>
+          </div>
+          <a href="https://github.com/Indrajthakur" target="_blank" class="py-2.5 px-4 rounded-lg bg-obsidian border border-slate-700 hover:border-neonGold text-xs font-mono font-semibold text-white hover:text-neonGold transition flex items-center justify-center gap-2">
+            <i data-lucide="github" class="w-4 h-4"></i> VIEW_ON_GITHUB
+          </a>
+        </div>
+        <div class="bg-panel border border-slate-800 rounded-xl p-6 flex flex-col justify-between border-emerald-500/40 space-y-4">
+          <div>
+            <span class="font-mono text-[11px] text-neonGold">⚙ IN_DEVELOPMENT</span>
+            <h3 class="font-display text-xl font-bold text-white mt-2">Project_03 // Classified</h3>
+            <p class="text-slate-400 text-sm mt-2">Full-stack web application currently in the build pipeline. Always shipping.</p>
+          </div>
+          <a href="https://github.com/Indrajthakur" target="_blank" class="py-2.5 px-4 rounded-lg bg-obsidian border border-slate-700 hover:border-neonEmerald text-xs font-mono font-semibold text-white hover:text-neonEmerald transition flex items-center justify-center gap-2">
+            <i data-lucide="github" class="w-4 h-4"></i> VIEW_ON_GITHUB
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="space-y-6">
+      <div class="border-b border-slate-800 pb-4">
+        <p class="font-mono text-xs text-neonCyan uppercase tracking-widest">// INITIALIZE_TRANSMISSION</p>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Connect With Indraraj</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="space-y-4">
+          <a href="https://github.com/Indrajthakur" target="_blank" class="block bg-panel border border-slate-800 rounded-xl p-5 cyan-glow transition">
+            <div class="flex items-center gap-4">
+              <div class="p-3 rounded-lg bg-obsidian text-neonCyan"><i data-lucide="github" class="w-6 h-6"></i></div>
+              <div><div class="font-mono text-xs text-slate-400">GITHUB REPOSITORY</div><div class="font-display text-lg font-bold text-white">@Indrajthakur</div></div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/indraraj-thakurr-2a590a3b1" target="_blank" class="block bg-panel border border-slate-800 rounded-xl p-5 gold-glow transition">
+            <div class="flex items-center gap-4">
+              <div class="p-3 rounded-lg bg-obsidian text-neonEmerald"><i data-lucide="linkedin" class="w-6 h-6"></i></div>
+              <div><div class="font-mono text-xs text-slate-400">LINKEDIN NETWORK</div><div class="font-display text-lg font-bold text-white">Indraraj Singh Thakur</div></div>
+            </div>
+          </a>
+        </div>
+        <div class="bg-panel border border-slate-800 rounded-xl p-6">
+          <form onsubmit="event.preventDefault(); alert('Transmission Dispatched!'); this.reset();" class="space-y-4">
+            <div><label class="block font-mono text-xs text-slate-400 mb-1">SENDER_NAME</label><input type="text" required placeholder="Your name..." class="w-full px-3.5 py-2.5 rounded-lg bg-obsidian border border-slate-800 text-sm text-white focus:outline-none focus:border-neonCyan" /></div>
+            <div><label class="block font-mono text-xs text-slate-400 mb-1">SENDER_EMAIL</label><input type="email" required placeholder="you@example.com" class="w-full px-3.5 py-2.5 rounded-lg bg-obsidian border border-slate-800 text-sm text-white focus:outline-none focus:border-neonCyan" /></div>
+            <div><label class="block font-mono text-xs text-slate-400 mb-1">MESSAGE</label><textarea rows="3" required placeholder="Your message..." class="w-full px-3.5 py-2.5 rounded-lg bg-obsidian border border-slate-800 text-sm text-white focus:outline-none focus:border-neonCyan"></textarea></div>
+            <button type="submit" class="w-full py-3 rounded-lg bg-neonCyan text-obsidian font-mono text-xs font-bold hover:bg-cyan-300 transition">SEND_TRANSMISSION</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-800 py-8 mt-16 text-center font-mono text-xs text-slate-500">
+    Engineered by Indraraj Singh Thakur. Built with clean code &amp; ambition.
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    let xp = 1250;
+    function gainXP() {
+      xp += 25;
+      document.getElementById('xp-count').innerText = xp;
+    }
+  </script>
+</body>
+</html>
